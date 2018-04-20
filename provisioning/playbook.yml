@@ -1,0 +1,32 @@
+---
+# Copied from Geerling and modified for
+# learning and using the go language
+# Ansible playbook for a Ragd server.
+#
+# @author Gerald Bennett (2018).
+
+- hosts: ragd
+  gather_facts: yes
+
+  vars_files:
+    - vars/main.yml
+
+  pre_tasks:
+    - name: Update apt cache if needed.
+      apt: update_cache=yes cache_valid_time=3600
+      become: yes
+
+  roles:
+    - geerlingguy.firewall
+    - geerlingguy.ntp
+    - geerlingguy.git
+    - joshualund.golang
+
+  tasks:
+    # Example read-write git checkout from github
+    - git:
+        repo: https://github.com/mbrochh/react-apollo-graphql-demo
+        dest: /home/{{ user_name }}/github.com/mbrochh/react-apollo-graphql-demo
+      become: yes
+      become_user: "{{ user_name }}"
+      

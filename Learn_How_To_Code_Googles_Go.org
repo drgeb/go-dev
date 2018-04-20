@@ -1,0 +1,99 @@
+#+TITLE: Notes for Online Udemy Course: 
+#+AUTHOR: Gerald E. Bennett
+#+EMAIL:  drgbennett@gmail
+#+DATE:      <2018-04-19 Thu 8:30am>
+#+LANGUAGE:  en
+#+INFOJS_OPT: view:showall toc:t ltoc:t mouse:underline path:http://orgmode.org/org-info.js
+#+LINK_HOME: http://ehneilsen.net
+#+LINK_UP: http://ehneilsen.net/notebook
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../css/notebook.css" />
+#+LaTeX_CLASS: smarticle
+#+LaTeX_HEADER: \pdfmapfile{/home/neilsen/texmf/fonts/map/dvips/libertine/libertine.map}
+#+LaTeX_HEADER: \usepackage[ttscale=.875]{libertine}
+#+LaTeX_HEADER: \usepackage{sectsty}
+#+LaTeX_HEADER: \sectionfont{\normalfont\scshape}
+#+LaTeX_HEADER: \subsectionfont{\normalfont\itshape}
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+OPTIONS: H:2 num:nil toc:nil \n:nil @:t ::t |:t ^:{} _:{} *:t TeX:t LaTeX:t
+#+STARTUP: showall
+
+* Section 1
+** 1. Valuable Resources
+*** Resources
+- [[https://golang.org/doc][golang docs]] contains only standard libraries
+- godoc.org contains 3rdparty libraries, sorted by popularity.
+- [[https://play.golang.org/][golang playground]]
+
+** Who made this Thing ?
+- Ken Thompson (B, C, UTF-8)
+- Rob Pike (Unix, UTF-8)
+- Robert Griesemer (JVM, HotSpot)
+- And few other engineers at google
+
+*** Statement: "We believe it is worth trying again with a new language, a concurrent, garbage-collected language with fast compilation
+**** Dependency Analysis is easy
+**** Go’s type system has no hiearcy
+**** Go is fully garbage collected
+**** Go propses an approach for the construction of system software on multi core machines
+
+*** Main points
+**** Performant
+**** multiple-cores
+**** conncurrency
+**** compiled
+**** network
+
+**** backed by google
+**** open source
+*** What type of language is Go?
+**** Its procedural - functions are stiched together
+**** Imperative - functions are build out of statements which are phrased as imperative commands
+** 2. Why choose the Go programming language?
+** 3. Hello World!
+#+BEGIN_SRC go
+  package main
+
+  import (
+    "fmt"
+  )
+
+  func main() {
+    fmt.Println("Hello, playground")
+  }
+#+END_SRC
+
+#+RESULTS:
+: Hello, playground
+* Section 2
+** Installing GO
+** Environment & PATH variables
+One can run go env to see the environment variables.
+#+BEGIN_SRC sh
+go env
+#+END_SRC
+
+#+RESULTS:
+| amd64                                           |      |          |                        |                    |                    |                                                                                                     |                          |              |
+| GOBIN=""                                        |      |          |                        |                    |                    |                                                                                                     |                          |              |
+| /Users/drgeb/Library/Caches/go-build            |      |          |                        |                    |                    |                                                                                                     |                          |              |
+| GOEXE=""                                        |      |          |                        |                    |                    |                                                                                                     |                          |              |
+| amd64                                           |      |          |                        |                    |                    |                                                                                                     |                          |              |
+| darwin                                          |      |          |                        |                    |                    |                                                                                                     |                          |              |
+| darwin                                          |      |          |                        |                    |                    |                                                                                                     |                          |              |
+| /Users/drgeb/Programming/go-workspace           |      |          |                        |                    |                    |                                                                                                     |                          |              |
+| GORACE=""                                       |      |          |                        |                    |                    |                                                                                                     |                          |              |
+| /usr/local/opt/go/libexec                       |      |          |                        |                    |                    |                                                                                                     |                          |              |
+| GOTMPDIR=""                                     |      |          |                        |                    |                    |                                                                                                     |                          |              |
+| /usr/local/opt/go/libexec/pkg/tool/darwin_amd64 |      |          |                        |                    |                    |                                                                                                     |                          |              |
+| gccgo                                           |      |          |                        |                    |                    |                                                                                                     |                          |              |
+| clang                                           |      |          |                        |                    |                    |                                                                                                     |                          |              |
+| clang++                                         |      |          |                        |                    |                    |                                                                                                     |                          |              |
+| 1                                               |      |          |                        |                    |                    |                                                                                                     |                          |              |
+| CGO_CFLAGS="-g                                  | -O2" |          |                        |                    |                    |                                                                                                     |                          |              |
+| CGO_CPPFLAGS=""                                 |      |          |                        |                    |                    |                                                                                                     |                          |              |
+| CGO_CXXFLAGS="-g                                | -O2" |          |                        |                    |                    |                                                                                                     |                          |              |
+| CGO_FFLAGS="-g                                  | -O2" |          |                        |                    |                    |                                                                                                     |                          |              |
+| CGO_LDFLAGS="-g                                 | -O2" |          |                        |                    |                    |                                                                                                     |                          |              |
+| pkg-config                                      |      |          |                        |                    |                    |                                                                                                     |                          |              |
+| GOGCCFLAGS="-fPIC                               | -m64 | -pthread | -fno-caret-diagnostics | -Qunused-arguments | -fmessage-length=0 | -fdebug-prefix-map=/var/folders/0r/1l3pvz3556zdv_dfrfzrb1w00000gn/T/go-build424093966=/tmp/go-build | -gno-record-gcc-switches | -fno-common" |
